@@ -412,7 +412,7 @@ N1 = Checkbutton(tab2, text = "Y-randomization",  variable=var3, \
                  font=("Helvetica", 12), command=enable3)
 N1.place(x=480, y=110)
 
-N1B1 = Label(tab2, text= 'Number of Runs',font=("Helvetica", 12))
+N1B1 = Label(tab2, text= 'Number of runs',font=("Helvetica", 12))
 N1B1.place(x=490,y=130)
 N1B1_x=Entry(tab2,state=DISABLED)
 N1B1_x.place(x=490,y=160)
