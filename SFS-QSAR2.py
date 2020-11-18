@@ -220,7 +220,7 @@ def trainsetfit2(X,y):
     forw=True
     score=Criterion4.get()
     cvl=fifthBoxTabThreer7c2.get()
-    x_,y_=c_.split('_')
+    #x_,y_=c_.split('_')
     directory=str(OFNEntry.get())
     
     if not os.path.isdir(directory):
