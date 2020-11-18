@@ -18,7 +18,7 @@ class kmca():
           #dfn.to_csv('dfn.csv',index=False)
           m,n=[],[]
           gr=dfn.groupby('cluster').count()
-          gr2=gr[gr['Cpd']>1].reset_index()
+          gr2=gr[gr[self.df.iloc[:,0:1].columns[0]]>1].reset_index()
           for i in gr2['cluster'].unique():
               di=dfn[dfn['cluster']==i]
               ai,bi= train_test_split(di,test_size=0.2, random_state=2)
