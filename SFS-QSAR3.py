@@ -123,7 +123,7 @@ def correlation(X,cthreshold):
     corr_matrix = X.corr()
     for i in range(len(corr_matrix.columns)):
         for j in range(i):
-            if (corr_matrix.iloc[i, j] > float(cthreshold)) and (corr_matrix.columns[j] not in col_corr):
+            if (abs(corr_matrix.iloc[i, j]) > float(cthreshold)) and (corr_matrix.columns[j] not in col_corr):
                 colname = corr_matrix.columns[i] # getting the name of column
                 col_corr.add(colname)
                 if colname in X.columns:
@@ -362,8 +362,8 @@ def writefile1():
     #tb.to_csv(tbn) 
     tb.to_csv(os.path.join(dct,tbn),index=False) 
     mx,mn=corr(tb)
-    filer.write('Maxmimum intercorrelation between descriptors: '+str(mx)+"\n")
-    filer.write('Minimum intercorrelation between descriptors: '+str(mn)+"\n")
+    filer.write('Maximum intercorrelation (r) between descriptors: '+str(mx)+"\n")
+    filer.write('Minimum intercorrelation (r) between descriptors: '+str(mn)+"\n")
     filer.write("\n")      
     if ytr.columns[0] in file2_cl.columns:
        Xts=file2_cl.iloc[:,2:]
@@ -457,8 +457,8 @@ def writefilex():
     filer.write("Selected features are:"+str(a)+"\n")
     filer.write("Statistics:"+str(b)+"\n")
     filer.write('Training set results: '+"\n")
-    filer.write('Maxmimum intercorrelation between descriptors: '+str(mx)+"\n")
-    filer.write('Minimum intercorrelation between descriptors: '+str(mn)+"\n")
+    filer.write('Maximum intercorrelation (r) between descriptors: '+str(mx)+"\n")
+    filer.write('Minimum intercorrelation (r) between descriptors: '+str(mn)+"\n")
     filer.write('MAE: '+str(d)+"\n")
     filer.write('RMSE: '+str(e)+"\n")
     filer.write('Q2LOO: '+str(c)+"\n")
