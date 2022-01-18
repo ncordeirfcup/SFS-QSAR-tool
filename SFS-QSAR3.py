@@ -542,6 +542,7 @@ def writefilex():
             yr=shuffling(ytr)
             try:
                reg.fit(Xtr[a],yr)
+               ls.append(reg.score(Xtr[a],yr))
             except np.linalg.LinAlgError as err:
                   if 'SVD did not converge in Linear Least Squares' in str(err):
                       reg.fit(Xtr[a],yr)
