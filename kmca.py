@@ -11,7 +11,7 @@ class kmca():
           
       def cal(self):
           X=self.df.iloc[:,1:]
-          kmeans = KMeans(n_clusters=self.nclus) 
+          kmeans = KMeans(n_clusters=self.nclus, random_state=42) 
           kmeans.fit(X)
           ncol=pd.DataFrame(kmeans.labels_, columns=['cluster'])
           dfn=pd.concat([self.df,ncol], axis=1)
